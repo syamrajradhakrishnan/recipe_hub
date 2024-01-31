@@ -66,19 +66,14 @@ export const Home = () => {
                     {recipes.map((recipe) => (
                         <div key={recipe._id} className="mb-8">
                             <div className="bg-green-200 p-4 rounded-lg shadow-md">
-
-                                <Link to={`/recipes/${recipe._id}`}>
-                                    <h2 className="text-xl font-semibold mb-2 text-orange-600 text-center">
-                                        {recipe.name}
-                                    </h2>
-                                </Link>
+                                <h2 className="text-xl font-semibold mb-2 text-orange-600text-center">{recipe.name}</h2>
                                 <button
                                     onClick={() => saveRecipe(recipe._id)}
                                     disabled={isRecipeSaved(recipe._id)}
                                     className={`bg-orange-500 text-white px-4 py-2 rounded-full focus:outline-none ${isRecipeSaved(recipe._id) ? 'bg-gray-500 cursor-not-allowed' : ''
                                         }`}
                                 >
-                                    {isRecipeSaved(recipe._id) ? 'Saved' : 'Save'}
+                                    {isRecipeSaved(recipe._id) ? "Saved" : "Save"}
                                 </button>
                             </div>
 
@@ -88,9 +83,7 @@ export const Home = () => {
                                 alt={recipe.name}
                             />
 
-                            <p className="mt-2 text-orange-600">
-                                Cooking Time: {recipe.cookingTime} (Minutes)
-                            </p>
+                            <p className="mt-2 text-orange-600">Cooking Time: {recipe.cookingTime} (Minutes)</p>
                         </div>
                     ))}
                 </div>
